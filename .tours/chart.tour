@@ -1,0 +1,11 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "chart",
+  "steps": [
+    {
+      "file": "src/components/modal-views/container.tsx",
+      "description": "This is for preview content\n",
+      "line": 20
+    }
+  ]
+}
