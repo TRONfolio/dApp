@@ -54,7 +54,7 @@ function TabItem({
           {selected && (
             <motion.span
               className={cn(
-                'absolute bottom-0 left-0 right-0 -z-[1] h-full w-full rounded-lg bg-brand shadow-button'
+                'absolute bottom-0 left-0 right-0 -z-[1] h-full w-full rounded-lg bg-[#e34234] shadow-button'
               )}
               layoutId="activeTabIndicator"
             />
@@ -165,7 +165,7 @@ function CoinTransaction({ transactionType }: CoinTransactionProps) {
         size="large"
         shape="rounded"
         fullWidth={true}
-        className="mt-6 uppercase xs:mt-8 xs:tracking-widest xl:px-2 2xl:px-9"
+        className="mt-6 bg-[#34234] uppercase xs:mt-8 xs:tracking-widest xl:px-2 2xl:px-9"
       >
         Process to wallet
       </Button>

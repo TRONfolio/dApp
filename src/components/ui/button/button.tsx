@@ -114,7 +114,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         break;
 
       default:
-        buttonColorClassNames = `${colorClassNames[1]} ${colorClassNames[2]}`;
+        buttonColorClassNames = `bg-[#E34234]`;
         buttonDripColor = 'rgba(255, 255, 255, 0.3)';
         break;
     }
@@ -157,7 +157,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             y={dripY}
             color={
               ['white', 'gray'].indexOf(color) !== -1
-                ? 'rgba(0, 0, 0, 0.1)'
+                ? 'E34234'
                 : buttonDripColor
             }
             fullWidth={fullWidth}

@@ -35,7 +35,7 @@ const HomePage: NextPageWithLayout<
   }
 
   // render default screen/page which is modern
-  return <ModernScreen />;
+  return <MinimalScreen />;
 };
 
 HomePage.getLayout = function getLayout(page) {

@@ -32,10 +32,7 @@ export default function MinimalScreen() {
   }, [breakpoint]);
   return (
     <>
-      <NextSeo
-        title="Criptic Minimal"
-        description="Criptic - React Next Web3 NFT Crypto Dashboard Template"
-      />
+      <NextSeo title="Tronfolio" description="Tronfolio dApp" />
       <div className="">
         <PriceFeedSlider
           limit={4}

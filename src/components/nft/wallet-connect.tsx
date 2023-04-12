@@ -94,7 +94,10 @@ export default function WalletConnect({
       ) : (
         <Button
           onClick={() => openModal('WALLET_CONNECT_VIEW')}
-          className={cn('shadow-main hover:shadow-large', btnClassName)}
+          className={cn(
+            'bg-[#E34234] shadow-main hover:shadow-large',
+            btnClassName
+          )}
         >
           CONNECT
         </Button>

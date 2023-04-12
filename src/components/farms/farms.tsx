@@ -35,7 +35,7 @@ function SortList() {
             <Listbox.Button className="hidden h-11 w-full items-center justify-between rounded-lg pr-2 text-sm text-gray-900 dark:text-white lg:flex xl:flex 3xl:hidden">
               <HorizontalThreeDots />
             </Listbox.Button>
-            <Listbox.Button className="flex h-11 w-full items-center justify-between rounded-lg bg-gray-100 px-4 text-sm text-gray-900 dark:bg-light-dark dark:text-white lg:hidden lg:w-40 xl:hidden xl:w-48 3xl:flex">
+            <Listbox.Button className="flex h-11 w-full items-center justify-between rounded-lg bg-[E34234] px-4 text-sm text-gray-900 dark:bg-light-dark dark:text-white lg:hidden lg:w-40 xl:hidden xl:w-48 3xl:flex">
               {selectedItem.name} <ChevronDown />
             </Listbox.Button>
           </>

@@ -54,7 +54,7 @@ function RadioGroupOption({ value }: RadioOptionProps) {
         >
           {checked && (
             <motion.span
-              className="absolute bottom-0 left-0 right-0 h-full w-full rounded-lg bg-brand shadow-large"
+              className="absolute bottom-0 left-0 right-0 h-full w-full rounded-lg bg-[#E34234] bg-brand shadow-large"
               layoutId="statusIndicator"
             />
           )}

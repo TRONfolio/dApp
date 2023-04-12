@@ -58,6 +58,8 @@ export default function RootLayout({
 
   // render default layout which is modern
   return (
-    <ModernLayout contentClassName={contentClassName}>{children}</ModernLayout>
+    <MinimalLayout contentClassName={contentClassName}>
+      {children}
+    </MinimalLayout>
   );
 }

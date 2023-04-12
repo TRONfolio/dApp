@@ -14,7 +14,7 @@ const SwapPage: NextPageWithLayout = () => {
   return (
     <>
       <NextSeo
-        title="Farms"
+        title="Tronfolio - Swap"
         description="Criptic - React Next Web3 NFT Crypto Dashboard Template"
       />
       <Trade>
