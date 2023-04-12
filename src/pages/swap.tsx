@@ -13,10 +13,7 @@ const SwapPage: NextPageWithLayout = () => {
   let [toggleCoin, setToggleCoin] = useState(false);
   return (
     <>
-      <NextSeo
-        title="Tronfolio - Swap"
-        description="Criptic - React Next Web3 NFT Crypto Dashboard Template"
-      />
+      <NextSeo title="Tronfolio - Swap" description="Tronfolio dApp" />
       <Trade>
         <div className="mb-5 border-b border-dashed border-gray-200 pb-5 dark:border-gray-800 xs:mb-7 xs:pb-6">
           <div
@@ -62,7 +59,7 @@ const SwapPage: NextPageWithLayout = () => {
           size="large"
           shape="rounded"
           fullWidth={true}
-          className="mt-6 uppercase xs:mt-8 xs:tracking-widest"
+          className="mt-6 bg-[#e34234] uppercase xs:mt-8 xs:tracking-widest"
         >
           SWAP
         </Button>

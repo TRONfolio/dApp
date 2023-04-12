@@ -30,10 +30,22 @@ export default function Logo() {
     >
       <span className="relative flex overflow-hidden">
         {isMounted && isDarkMode && (
-          <Image src={darkLogo} alt="Criptic" height={24} priority />
+          <Image
+            src="/tronfolio.png"
+            alt="Criptic"
+            height={24}
+            width={150}
+            priority
+          />
         )}
         {isMounted && !isDarkMode && (
-          <Image src={lightLogo} alt="Criptic" height={24} priority />
+          <Image
+            src="/tronfolio.png"
+            alt="Criptic"
+            height={24}
+            width={150}
+            priority
+          />
         )}
       </span>
     </AnchorLink>

@@ -36,25 +36,25 @@ export default function RootLayout({
   if (!isMounted) return null;
 
   // render minimal layout
-  if (layout === LAYOUT_OPTIONS.MINIMAL) {
-    return <MinimalLayout>{children}</MinimalLayout>;
-  }
+  // if (layout === LAYOUT_OPTIONS.MINIMAL) {
+  //   return <MinimalLayout>{children}</MinimalLayout>;
+  // }
 
-  // render retro layout
-  if (layout === LAYOUT_OPTIONS.RETRO) {
-    return (
-      <RetroLayout contentClassName={contentClassName}>{children}</RetroLayout>
-    );
-  }
+  // // render retro layout
+  // if (layout === LAYOUT_OPTIONS.RETRO) {
+  //   return (
+  //     <RetroLayout contentClassName={contentClassName}>{children}</RetroLayout>
+  //   );
+  // }
 
-  // render classic layout
-  if (layout === LAYOUT_OPTIONS.CLASSIC) {
-    return (
-      <ClassicLayout contentClassName={contentClassName}>
-        {children}
-      </ClassicLayout>
-    );
-  }
+  // // render classic layout
+  // if (layout === LAYOUT_OPTIONS.CLASSIC) {
+  //   return (
+  //     <ClassicLayout contentClassName={contentClassName}>
+  //       {children}
+  //     </ClassicLayout>
+  //   );
+  // }
 
   // render default layout which is modern
   return (

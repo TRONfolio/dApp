@@ -118,7 +118,7 @@ function ThemeSwitcher() {
   );
 }
 
-// Component: DirectionSwitcher
+Component: DirectionSwitcher;
 function DirectionSwitcher() {
   const [direction, setDirection] = useLocalStorage('criptic-direction', 'ltr');
   useDirection(direction ? direction : 'ltr');
@@ -151,7 +151,7 @@ function DirectionSwitcher() {
   );
 }
 
-// Component: LayoutSwitcher
+Component: LayoutSwitcher;
 const LayoutIcons = {
   [LAYOUT_OPTIONS.MODERN]: <ModernLayoutIcon />,
   [LAYOUT_OPTIONS.MINIMAL]: <MinimalLayoutIcon />,
@@ -302,9 +302,9 @@ export default function SettingsDrawer() {
               <Scrollbar style={{ height: 'calc(100% - 64px)' }}>
                 <div className="pb-8">
                   <ThemeSwitcher />
-                  <LayoutSwitcher />
-                  <DirectionSwitcher />
-                  <ColorSwitcher />
+                  {/* <LayoutSwitcher /> */}
+                  {/* <DirectionSwitcher /> */}
+                  {/* <ColorSwitcher /> */}
                 </div>
               </Scrollbar>
             </div>

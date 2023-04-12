@@ -35,7 +35,7 @@ function SortList() {
             <Listbox.Button className="hidden h-11 w-full items-center justify-between rounded-lg pr-2 text-sm text-gray-900 dark:text-white lg:flex xl:flex 3xl:hidden">
               <HorizontalThreeDots />
             </Listbox.Button>
-            <Listbox.Button className="flex h-11 w-full items-center justify-between rounded-lg bg-[E34234] px-4 text-sm text-gray-900 dark:bg-light-dark dark:text-white lg:hidden lg:w-40 xl:hidden xl:w-48 3xl:flex">
+            <Listbox.Button className="flex h-11 w-full items-center justify-between rounded-lg bg-[#E34234] px-4 text-sm text-gray-900 dark:bg-light-dark dark:text-white lg:hidden lg:w-40 xl:hidden xl:w-48 3xl:flex">
               {selectedItem.name} <ChevronDown />
             </Listbox.Button>
           </>
@@ -108,7 +108,9 @@ function StackedSwitch() {
     >
       <div
         className={cn(
-          isStacked ? 'bg-brand dark:bg-white' : 'bg-gray-200 dark:bg-gray-500',
+          isStacked
+            ? 'bg-[#e34234] dark:bg-white'
+            : 'bg-gray-200 dark:bg-gray-500',
           'relative inline-flex h-[22px] w-10 items-center rounded-full transition-colors duration-300'
         )}
       >
@@ -145,7 +147,7 @@ function Status() {
           >
             {checked && (
               <motion.span
-                className="absolute bottom-0 left-0 right-0 h-full w-full rounded-lg bg-brand shadow-large"
+                className="absolute bottom-0 left-0 right-0 h-full w-full rounded-lg bg-[#e34234] shadow-large"
                 layoutId="statusIndicator"
               />
             )}
@@ -162,7 +164,7 @@ function Status() {
           >
             {checked && (
               <motion.span
-                className="absolute bottom-0 left-0 right-0 h-full w-full rounded-lg bg-brand shadow-large"
+                className="absolute bottom-0 left-0 right-0 h-full w-full rounded-lg bg-[#e34234] shadow-large"
                 layoutId="statusIndicator"
               />
             )}

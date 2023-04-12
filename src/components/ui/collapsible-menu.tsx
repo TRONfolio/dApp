@@ -69,7 +69,7 @@ export function MenuItem({
 
             {isChildrenActive && (
               <motion.span
-                className="absolute bottom-0 left-0 right-0 h-full w-full rounded-lg bg-brand shadow-large"
+                className="absolute bottom-0 left-0 right-0 h-full w-full rounded-lg bg-[#e34234] shadow-large"
                 layoutId="menu-item-active-indicator"
               />
             )}
@@ -95,7 +95,7 @@ export function MenuItem({
                         }),
                     }}
                     className="flex items-center rounded-lg p-3 text-sm text-gray-500 transition-all before:h-1 before:w-1 before:rounded-full before:bg-gray-500 hover:text-brand ltr:pl-6 before:ltr:mr-5 rtl:pr-6 before:rtl:ml-5 dark:hover:text-white"
-                    activeClassName="!text-brand dark:!text-white dark:before:!bg-white before:!bg-brand before:!w-2 before:!h-2 before:-ml-0.5 before:ltr:!mr-[18px] before:rtl:!ml-[18px] !font-medium"
+                    activeClassName="!text-brand dark:!text-white dark:before:!bg-white before:!bg-[#e34234] before:!w-2 before:!h-2 before:-ml-0.5 before:ltr:!mr-[18px] before:rtl:!ml-[18px] !font-medium"
                   >
                     {item.name}
                   </ActiveLink>
@@ -137,7 +137,7 @@ export function MenuItem({
 
           {href === pathname && (
             <motion.span
-              className="absolute bottom-0 left-0 right-0 h-full w-full rounded-lg bg-brand shadow-large"
+              className="absolute bottom-0 left-0 right-0 h-full w-full rounded-lg bg-[#e34234] shadow-large"
               layoutId="menu-item-active-indicator"
             />
           )}
