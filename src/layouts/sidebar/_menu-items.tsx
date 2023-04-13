@@ -16,11 +16,6 @@ export const menuItems = [
     href: routes.home,
   },
   {
-    name: 'Farm',
-    icon: <FarmIcon />,
-    href: routes.farms,
-  },
-  {
     name: 'Swap',
     icon: <ExchangeIcon />,
     href: routes.swap,
@@ -29,26 +24,6 @@ export const menuItems = [
     name: 'Liquidity',
     icon: <PoolIcon />,
     href: routes.liquidity,
-  },
-  {
-    name: 'Explore NFTs',
-    icon: <CompassIcon />,
-    href: routes.search,
-  },
-  {
-    name: 'Create NFT',
-    icon: <PlusCircle />,
-    href: routes.createNft,
-  },
-  {
-    name: 'NFT Details',
-    icon: <DiskIcon />,
-    href: routes.nftDetails,
-  },
-  {
-    name: 'Profile',
-    icon: <ProfileIcon />,
-    href: routes.profile,
   },
   {
     name: 'Vote',

@@ -20,10 +20,7 @@ const VotePage: NextPageWithLayout = () => {
   const { layout } = useLayout();
   return (
     <>
-      <NextSeo
-        title="Vote"
-        description="Criptic - React Next Web3 NFT Crypto Dashboard Template"
-      />
+      <NextSeo title="Tronfolio - Vote" description="Tronfolio dApp" />
       <div className="mx-auto w-full max-w-[1160px] text-sm md:pt-14 4xl:pt-24">
         <div
           className={cn('grid ', {
@@ -54,7 +51,7 @@ const VotePage: NextPageWithLayout = () => {
               Vote with Pool
             </h3>
             <p className="leading-loose text-gray-600 dark:text-gray-400">
-              Vote with POOL tokens held{' '}
+              Vote with Tronfolio tokens held{' '}
               <br className="hidden xs:inline-block" /> in your wallet or
               delegated <br className="hidden xs:inline-block" /> to you.
             </p>

@@ -20,7 +20,9 @@ export default function TopPools({ limit }: TopPoolsProps) {
         }
       )}
     >
-      <h3 className="mb-6 text-base font-medium uppercase">Top Pools</h3>
+      <h3 className="mb-6 text-base font-medium uppercase">
+        Biggest Pools on TRON
+      </h3>
       <div className="mb-5 flex items-center justify-between text-sm text-gray-500 dark:text-gray-400">
         <span className="col-span-2">Pool</span>
         <span>Volume</span>

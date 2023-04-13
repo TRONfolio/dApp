@@ -35,7 +35,7 @@ export default function MinimalScreen() {
       <NextSeo title="Tronfolio" description="Tronfolio dApp" />
       <div className="">
         <PriceFeedSlider
-          limit={4}
+          limit={2}
           priceFeeds={priceFeedData}
           gridClassName="grid-cols-1 gap-6 2xl:grid-cols-4"
         />

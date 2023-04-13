@@ -5,6 +5,7 @@ import { A11y } from 'swiper';
 import { useBreakpoint } from '@/lib/hooks/use-breakpoint';
 import { useIsMounted } from '@/lib/hooks/use-is-mounted';
 import cn from 'classnames';
+import Image from 'next/image';
 
 type Price = {
   name: number;
@@ -15,7 +16,8 @@ type LivePriceFeedProps = {
   id: string;
   name: string;
   symbol: string;
-  icon: React.ReactElement;
+  // icon: React.ReactElement;
+  icon: string;
   balance: string;
   usdBalance: string;
   change: string;
@@ -48,7 +50,7 @@ export function LivePriceFeed({
     >
       <div className="w-full flex-col">
         <div className="mb-3 flex items-center">
-          {icon}
+          <Image src={icon} alt="" width="30" height="30" />
           <h4 className="text-sm font-medium text-gray-900 ltr:ml-3 rtl:mr-3 dark:text-white">
             {name}
           </h4>

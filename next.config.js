@@ -17,5 +17,11 @@ const nextConfig = withPWA({
       ignoreDuringBuilds: true,
     },
   }),
+  images: {
+    domains: ['logosenvector.com'],
+  },
+  images: {
+    domains: ['upload.wikimedia.org'],
+  },
 });
 module.exports = nextConfig;

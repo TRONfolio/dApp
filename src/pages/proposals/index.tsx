@@ -83,10 +83,7 @@ const ProposalsPage: NextPageWithLayout = () => {
   ];
   return (
     <>
-      <NextSeo
-        title="Proposal"
-        description="Criptic - React Next Web3 NFT Crypto Dashboard Template"
-      />
+      <NextSeo title="Tronfolio - Proposal" description="Tronfolio dApp" />
       <section className="mx-auto w-full max-w-[1160px] text-sm ">
         <header
           className={cn(
@@ -108,7 +105,8 @@ const ProposalsPage: NextPageWithLayout = () => {
                 You have 100 votes
               </h2>
               <p className="leading-relaxed text-gray-600 dark:text-gray-400">
-                You need CRIPTIC or CRIPTIC tokens to participate in governance.
+                You need TRONFOLIO or TRONFOLIO tokens to participate in
+                governance.
               </p>
             </div>
           </div>
