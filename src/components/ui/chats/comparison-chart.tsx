@@ -19,6 +19,7 @@ import { RadioGroup } from '@/components/ui/radio-group';
 import { motion } from 'framer-motion';
 import { useTheme } from 'next-themes';
 import { useBreakpoint } from '@/lib/hooks/use-breakpoint';
+import Image from 'next/image';
 
 import {
   weeklyComparison,
@@ -54,7 +55,7 @@ function RadioGroupOption({ value }: RadioOptionProps) {
         >
           {checked && (
             <motion.span
-              className="absolute bottom-0 left-0 right-0 h-full w-full rounded-lg bg-[#E34234] bg-brand shadow-large"
+              className="absolute bottom-0 left-0 right-0 h-full w-full rounded-lg bg-[#E34234] shadow-large"
               layoutId="statusIndicator"
             />
           )}
@@ -107,8 +108,18 @@ export default function ComparisonChart() {
                   toggleCoin ? 'flex-row-reverse' : 'flex-row'
                 )}
               >
-                <Bitcoin className="h-auto w-7 lg:w-9" />
-                <EthereumDark className="h-auto w-7 lg:w-9" />
+                <Image
+                  src="https://logosenvector.com/logo/img/tron-cryptocurrency-4362.jpg"
+                  alt=""
+                  width="40"
+                  height="40"
+                />
+                <Image
+                  src="https://seeklogo.com/images/T/tether-usdt-logo-FA55C7F397-seeklogo.com.png"
+                  alt=""
+                  width="40"
+                  height="40"
+                />
               </span>
               <span
                 className={cn(
@@ -116,7 +127,7 @@ export default function ComparisonChart() {
                   toggleCoin ? 'flex-row-reverse' : 'flex-row'
                 )}
               >
-                <span>BTCB</span>/<span>ETH</span>
+                <span>TRX</span>/<span>USDT</span>
               </span>
               <Button
                 size="mini"
@@ -138,7 +149,7 @@ export default function ComparisonChart() {
                 toggleCoin ? 'flex-row-reverse' : 'flex-row'
               )}
             >
-              <span>BTCB</span>/<span>ETH</span>
+              <span>USDT</span>/<span>TRX</span>
             </span>
 
             <span
