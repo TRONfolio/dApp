@@ -13,7 +13,7 @@ const Logo: React.FC<React.SVGAttributes<{}>> = (props) => {
       <span className="relative flex overflow-hidden">
         {isMounted && isDarkMode && (
           <Image
-            src="/tronfolio.png"
+            src="/bitfolio.png"
             alt="Criptic"
             priority
             width={28}
@@ -22,7 +22,7 @@ const Logo: React.FC<React.SVGAttributes<{}>> = (props) => {
         )}
         {isMounted && !isDarkMode && (
           <Image
-            src="/tronfolio.png"
+            src="/bitfolio.png"
             alt="Criptic"
             priority
             width={28}

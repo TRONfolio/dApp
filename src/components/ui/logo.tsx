@@ -31,7 +31,7 @@ export default function Logo() {
       <span className="relative flex overflow-hidden">
         {isMounted && isDarkMode && (
           <Image
-            src="/tronfolio.png"
+            src="/bitfolio.png"
             alt="Criptic"
             height={24}
             width={150}
@@ -40,7 +40,7 @@ export default function Logo() {
         )}
         {isMounted && !isDarkMode && (
           <Image
-            src="/tronfolio.png"
+            src="/bitfolio.png"
             alt="Criptic"
             height={24}
             width={150}

@@ -8,6 +8,10 @@ import { ChevronForward } from '@/components/icons/chevron-forward';
 import { PowerIcon } from '@/components/icons/power';
 import { useModal } from '@/components/modal-views/context';
 import { useContext } from 'react';
+import {
+  WalletConnectWallet,
+  WalletConnectChainID,
+} from '@tronweb3/walletconnect-tron';
 
 export default function WalletConnect({
   btnClassName,
@@ -18,6 +22,26 @@ export default function WalletConnect({
 }) {
   const { openModal } = useModal();
   const { address, disconnectWallet, balance } = useContext(WalletContext);
+
+  const handleButtonClick = (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    // Perform desired actions when the button is clicked
+    const wallet = new WalletConnectWallet({
+      network: WalletConnectChainID.Mainnet,
+      options: {
+        relayUrl: 'wss://relay.walletconnect.com',
+        projectId: '....',
+        metadata: {
+          name: 'JustLend',
+          description: 'JustLend WalletConnect',
+          url: 'https://app.justlend.org/',
+          icons: ['https://app.justlend.org/mainLogo.svg'],
+        },
+      },
+    });
+  };
+
   return (
     <>
       {address ? (
@@ -93,7 +117,7 @@ export default function WalletConnect({
         </div>
       ) : (
         <Button
-          onClick={() => openModal('WALLET_CONNECT_VIEW')}
+          onClick={handleButtonClick}
           className={cn(
             'bg-[#E34234] shadow-main hover:shadow-large',
             btnClassName
