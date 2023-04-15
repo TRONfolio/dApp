@@ -21,11 +21,6 @@ export const menuItems = [
     href: routes.swap,
   },
   {
-    name: 'Liquidity',
-    icon: <PoolIcon />,
-    href: routes.liquidity,
-  },
-  {
     name: 'Vote',
     icon: <VoteIcon />,
     href: routes.vote,
