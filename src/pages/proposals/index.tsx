@@ -83,7 +83,7 @@ const ProposalsPage: NextPageWithLayout = () => {
   ];
   return (
     <>
-      <NextSeo title="Tronfolio - Proposal" description="Tronfolio dApp" />
+      <NextSeo title="Bitfolio - Proposal" description="Bitfolio dApp" />
       <section className="mx-auto w-full max-w-[1160px] text-sm ">
         <header
           className={cn(
@@ -105,7 +105,7 @@ const ProposalsPage: NextPageWithLayout = () => {
                 You have 100 votes
               </h2>
               <p className="leading-relaxed text-gray-600 dark:text-gray-400">
-                You need TRONFOLIO or TRONFOLIO tokens to participate in
+                You need BITFOLIO or BITFOLIO tokens to participate in
                 governance.
               </p>
             </div>

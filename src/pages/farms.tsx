@@ -6,7 +6,7 @@ import Farms from '@/components/farms/farms';
 const FarmsPage: NextPageWithLayout = () => {
   return (
     <>
-      <NextSeo title="Bitfolio - Farms" description="Tronfolio dApp" />
+      <NextSeo title="Bitfolio - Farms" description="Bitfolio dApp" />
       <Farms />
     </>
   );

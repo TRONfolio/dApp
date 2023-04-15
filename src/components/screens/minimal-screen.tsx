@@ -32,7 +32,7 @@ export default function MinimalScreen() {
   }, [breakpoint]);
   return (
     <>
-      <NextSeo title="Bitfolio" description="Tronfolio dApp" />
+      <NextSeo title="Bitfolio" description="Bitfolio dApp" />
       <div className="">
         <PriceFeedSlider
           limit={2}

@@ -109,7 +109,7 @@ export default function ComparisonChart() {
                 )}
               >
                 <Image
-                  src="https://logosenvector.com/logo/img/tron-cryptocurrency-4362.jpg"
+                  src="https://cryptologos.cc/logos/bittorrent-bttold-logo.png"
                   alt=""
                   width="40"
                   height="40"
@@ -127,7 +127,7 @@ export default function ComparisonChart() {
                   toggleCoin ? 'flex-row-reverse' : 'flex-row'
                 )}
               >
-                <span>TRX</span>/<span>USDT</span>
+                <span>BITTORENT</span>/<span>USDT</span>
               </span>
               <Button
                 size="mini"
@@ -149,7 +149,7 @@ export default function ComparisonChart() {
                 toggleCoin ? 'flex-row-reverse' : 'flex-row'
               )}
             >
-              <span>USDT</span>/<span>TRX</span>
+              <span>USDT</span>/<span>BITTORENT</span>
             </span>
 
             <span

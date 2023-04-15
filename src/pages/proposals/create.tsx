@@ -253,7 +253,7 @@ const CreateProposalPage: NextPageWithLayout = () => {
   }
   return (
     <>
-      <NextSeo title="Create Proposal" description="tRONFOLIO DaPP" />
+      <NextSeo title="Create Proposal" description="Bitfolio DaPP" />
       <section className="mx-auto w-full max-w-[1160px] text-sm">
         <header className="mb-10 flex flex-col gap-4 rounded-lg bg-white p-5 py-6 shadow-card dark:bg-light-dark xs:p-6 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-start gap-4 xs:gap-3 xl:gap-4">
@@ -266,7 +266,7 @@ const CreateProposalPage: NextPageWithLayout = () => {
               </h2>
               <p className="leading-[1.8] text-gray-600 dark:text-gray-400">
                 In order to submit a proposal you must have at least 10,000
-                TRONFOLIO tokens <br className="hidden xl:inline-block" />{' '}
+                BITFOLIO tokens <br className="hidden xl:inline-block" />{' '}
                 delegated to you{' '}
                 <a
                   target="_blank"

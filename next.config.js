@@ -18,7 +18,12 @@ const nextConfig = withPWA({
     },
   }),
   images: {
-    domains: ['logosenvector.com', 'upload.wikimedia.org', 'seeklogo.com'],
+    domains: [
+      'cryptologos.cc',
+      'upload.wikimedia.org',
+      'seeklogo.com',
+      'logosenvector.com',
+    ],
   },
 });
 module.exports = nextConfig;
