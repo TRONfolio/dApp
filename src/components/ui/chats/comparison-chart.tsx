@@ -177,9 +177,9 @@ export default function ComparisonChart() {
           onChange={handleOnChange}
           className="flex items-center gap-5"
         >
-          <RadioGroupOption value="Week" />
+          {/* <RadioGroupOption value="Week" /> */}
           <RadioGroupOption value="Month" />
-          <RadioGroupOption value="Year" />
+          {/* <RadioGroupOption value="Year" /> */}
         </RadioGroup>
       </div>
 

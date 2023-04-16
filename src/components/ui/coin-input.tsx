@@ -7,6 +7,7 @@ import { ChevronDown } from '@/components/icons/chevron-down';
 import { useClickAway } from '@/lib/hooks/use-click-away';
 import { useLockBodyScroll } from '@/lib/hooks/use-lock-body-scroll';
 import { coinList } from '@/data/static/coin-list';
+import Image from 'next/image';
 // dynamic import
 const CoinSelectView = dynamic(
   () => import('@/components/ui/coin-select-view')
@@ -65,7 +66,7 @@ export default function CoinInput({
             onClick={() => setVisibleCoinList(true)}
             className="flex items-center font-medium outline-none dark:text-gray-100"
           >
-            {selectedCoin?.icon}{' '}
+            <Image src={selectedCoin?.logo} alt="" width="20" height="20" />{' '}
             <span className="ltr:ml-2 rtl:mr-2">{selectedCoin?.code} </span>
             <ChevronDown className="ltr:ml-1.5 rtl:mr-1.5" />
           </button>

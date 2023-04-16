@@ -14,6 +14,15 @@ const SwapPage: NextPageWithLayout = () => {
   return (
     <>
       <NextSeo title="Bitfolio - Swap" description="Bitfolio dApp" />
+      {/* <iframe id="jmSwapFrame" src="https://just.money/widget" style="width:500px;height:500px;margin:auto;display:block;" allowtransparency="true" frameborder="0" scrolling="no"></iframe> */}
+      {/* <iframe
+  id="jmSwapFrame"
+  src="https://just.money/widget"
+  style={{ width: '500px', height: '500px', margin: 'auto', display: 'block' }}
+  // allowtransparency="true"
+  frameBorder="0"
+  scrolling="no"
+></iframe> */}
       <Trade>
         <div className="mb-5 border-b border-dashed border-gray-200 pb-5 dark:border-gray-800 xs:mb-7 xs:pb-6">
           <div
@@ -53,7 +62,7 @@ const SwapPage: NextPageWithLayout = () => {
           <TransactionInfo label={'Offered by'} />
           <TransactionInfo label={'Price Slippage'} value={'1%'} />
           <TransactionInfo label={'Network Fee'} />
-          <TransactionInfo label={'Criptic Fee'} />
+          <TransactionInfo label={'Bitfolio Fee'} />
         </div>
         <Button
           size="large"

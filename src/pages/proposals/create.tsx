@@ -20,8 +20,8 @@ const actionOptions = [
     value: 'custom_contact',
   },
   {
-    name: 'CRIPTIC Token',
-    value: 'criptic_token',
+    name: 'BITFOLIO Token',
+    value: 'bitfolio_token',
   },
   {
     name: 'Reserve',
@@ -217,7 +217,7 @@ function ActionFields() {
               placeholder="Enter contact address 0x1f9840a85..."
             />
           )}
-          {actionType.value === 'criptic_token' && (
+          {actionType.value === 'bitfolio_token' && (
             <div className="rtl:xs:mlr6 rtl:sm:mlr12 mt-4 ltr:xs:ml-6 ltr:sm:ml-12">
               <CripticTokenAction
                 selectedOption={cripticTokenAction}

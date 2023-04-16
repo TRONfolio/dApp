@@ -63,13 +63,6 @@ export function LivePriceFeed({
 
         <div className="flex items-center text-xs font-medium 2xl:text-sm">
           <span
-            className="truncate tracking-tighter text-gray-600 ltr:mr-5 rtl:ml-5 dark:text-gray-400 2xl:w-24 3xl:w-auto"
-            title={`${usdBalance} USD`}
-          >
-            {usdBalance} {symbol}
-          </span>
-
-          <span
             className={`flex items-center  ${
               isChangePositive ? 'text-green-500' : 'text-red-500'
             }`}

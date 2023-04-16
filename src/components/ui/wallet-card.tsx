@@ -4,6 +4,7 @@ import { PieChart, Pie, Tooltip, Cell, ResponsiveContainer } from 'recharts';
 import { ArrowUp } from '@/components/icons/arrow-up';
 import { LongArrowUp } from '@/components/icons/long-arrow-up';
 import { walletCurrencies } from '@/data/static/wallet-currencies';
+import Image from 'next/image';
 
 const data = [
   {
@@ -19,13 +20,13 @@ const data = [
     isChangePositive: false,
   },
   {
-    name: 'Cardano',
+    name: 'Tron',
     value: 300,
     volume: '+5.63%',
     isChangePositive: true,
   },
   {
-    name: 'Binance Coin',
+    name: 'Bittorent',
     value: 15,
     volume: '-3.02%',
     isChangePositive: false,
@@ -91,7 +92,7 @@ export default function WalletCard() {
       <div className="mt-20">
         <div className="mb-5 flex items-center justify-between text-sm font-medium text-gray-400">
           <span>Coin Name</span>
-          <span>Volume</span>
+          {/* <span>Volume</span> */}
         </div>
         <ul className="grid gap-5">
           {walletCurrencies.map((currency) => (
@@ -101,6 +102,7 @@ export default function WalletCard() {
             >
               <span className="flex items-center gap-2.5 whitespace-nowrap">
                 {currency.icon}
+                <Image src={currency.logo} alt="" width="25" height="25" />
                 {currency.name}
               </span>
               <span className="text-center">{currency.code}</span>

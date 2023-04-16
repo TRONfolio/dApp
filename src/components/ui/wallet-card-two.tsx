@@ -19,13 +19,13 @@ const data = [
     isChangePositive: false,
   },
   {
-    name: 'Cardano',
+    name: 'Tron',
     value: 300,
     volume: '+5.63%',
     isChangePositive: true,
   },
   {
-    name: 'Binance Coin',
+    name: 'Bittorent',
     value: 15,
     volume: '-3.02%',
     isChangePositive: false,
@@ -93,7 +93,7 @@ export default function WalletCard() {
       <div className="mt-12 md:mt-6 xl:mt-12">
         <div className="mb-5 flex items-center justify-between text-sm font-medium text-gray-400">
           <span>Coin Name</span>
-          <span>Volume</span>
+          {/* <span>Volume</span> */}
         </div>
         <ul className="grid gap-5">
           {walletCurrencies.map((currency) => (
@@ -102,7 +102,6 @@ export default function WalletCard() {
               className="grid grid-cols-[150px_repeat(2,1fr)] items-center justify-between text-sm font-medium text-gray-900 dark:text-white 2xl:grid-cols-[140px_repeat(2,1fr)] 3xl:grid-cols-[150px_repeat(2,1fr)]"
             >
               <span className="flex items-center gap-2.5 whitespace-nowrap">
-                {currency.icon}
                 {currency.name}
               </span>
               <span className="text-center"></span>

@@ -5,7 +5,7 @@ import { Cardano } from '@/components/icons/cardano';
 
 export const walletCurrencies = [
   {
-    icon: <Bitcoin />,
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/800px-Bitcoin.svg.png',
     name: 'Bitcoin',
     code: 'BTC',
     volume: '+12.5%',
@@ -13,7 +13,7 @@ export const walletCurrencies = [
     isChangePositive: true,
   },
   {
-    icon: <Tether />,
+    logo: 'https://seeklogo.com/images/T/tether-usdt-logo-FA55C7F397-seeklogo.com.png',
     name: 'Tether USD',
     code: 'USDT',
     volume: '-8.47%',
@@ -21,17 +21,17 @@ export const walletCurrencies = [
     isChangePositive: false,
   },
   {
-    icon: <Cardano />,
-    name: 'Cardano',
-    code: 'ADA',
+    logo: 'https://logosenvector.com/logo/img/tron-cryptocurrency-4362.jpg',
+    name: 'Tron',
+    code: 'TRX',
     volume: '+5.63%',
     color: '#3468D1',
     isChangePositive: true,
   },
   {
-    icon: <Bnb />,
-    name: 'Binance Coin',
-    code: 'BNB',
+    logo: 'https://cryptologos.cc/logos/bittorrent-bttold-logo.png',
+    name: 'Bittorent',
+    code: 'BTT',
     volume: '-3.02%',
     color: '#F3BA2F',
     isChangePositive: false,

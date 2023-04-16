@@ -64,7 +64,7 @@ export const monthlyComparison = [
     eth: 2,
     diff: 3,
     percentage: '1.01%',
-    date: 1622505600,
+    date: 1672531200,
   },
   {
     name: 'FEB',
@@ -72,7 +72,7 @@ export const monthlyComparison = [
     eth: 3,
     diff: 4,
     percentage: '3.21%',
-    date: 1622592000,
+    date: 1675209600,
   },
   {
     name: 'MAR',
@@ -80,7 +80,7 @@ export const monthlyComparison = [
     eth: 3,
     diff: 6,
     percentage: '5.60%',
-    date: 1622678400,
+    date: 1677888000,
   },
   {
     name: 'APR',
@@ -88,7 +88,7 @@ export const monthlyComparison = [
     eth: 6,
     diff: -1.5,
     percentage: '3.94%',
-    date: 1622764800,
+    date: 1680566400,
   },
   {
     name: 'MAY',
@@ -96,7 +96,7 @@ export const monthlyComparison = [
     eth: 4,
     diff: 5,
     percentage: '4.23%',
-    date: 1622851200,
+    date: 1683158400,
   },
   {
     name: 'JUN',
@@ -104,7 +104,7 @@ export const monthlyComparison = [
     eth: 8,
     diff: -1,
     percentage: '7.68%',
-    date: 1622937600,
+    date: 1685836800,
   },
   {
     name: 'JUL',
@@ -112,7 +112,7 @@ export const monthlyComparison = [
     eth: 2.5,
     diff: 5.5,
     percentage: '10%',
-    date: 1623024000,
+    date: 1688428800,
   },
   {
     name: 'AUG',
@@ -120,7 +120,7 @@ export const monthlyComparison = [
     eth: 3,
     diff: 7,
     percentage: '9.42%',
-    date: 1623110400,
+    date: 1691107200,
   },
   {
     name: 'SEP',
@@ -128,7 +128,7 @@ export const monthlyComparison = [
     eth: 6,
     diff: -0.5,
     percentage: '5.65%',
-    date: 1623196800,
+    date: 1693785600,
   },
   {
     name: 'OCT',
@@ -136,7 +136,7 @@ export const monthlyComparison = [
     eth: 5,
     diff: 2,
     percentage: '8.88%',
-    date: 1623283200,
+    date: 1696377600,
   },
   {
     name: 'NOV',
@@ -144,7 +144,7 @@ export const monthlyComparison = [
     eth: 3,
     diff: 6,
     percentage: '1.42%',
-    date: 1623369600,
+    date: 1699056000,
   },
   {
     name: 'DEC',
@@ -152,7 +152,7 @@ export const monthlyComparison = [
     eth: 2,
     diff: 2.3,
     percentage: '10.2%',
-    date: 1623456000,
+    date: 1701648000,
   },
 ];
 

@@ -4,6 +4,7 @@ import cn from 'classnames';
 import { Listbox } from '@/components/ui/listbox';
 import { ChevronDown } from '@/components/icons/chevron-down';
 import { Transition } from '@/components/ui/transition';
+import Image from 'next/image';
 
 type CoinListBoxProps = {
   coins: CoinTypes[];
@@ -47,7 +48,7 @@ export default function CoinListBox({
                         : 'hover:bg-gray-50 dark:hover:bg-gray-700'
                     }`}
                   >
-                    {coin.icon}
+                    <Image src={coin.logo} alt="" width="25" height="25" />
                     {coin.name}
                   </span>
                 )}

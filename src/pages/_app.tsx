@@ -1,3 +1,5 @@
+import React from 'react';
+//import { Helmet } from 'react-helmet';
 import type { AppProps } from 'next/app';
 import type { NextPageWithLayout } from '@/types';
 // import { Fira_Code } from '@next/font/google';
@@ -14,6 +16,7 @@ import 'swiper/css';
 import '@/assets/css/scrollbar.css';
 import '@/assets/css/globals.css';
 import '@/assets/css/range-slider.css';
+import Script from 'next/script';
 
 type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
@@ -38,6 +41,31 @@ function CustomApp({ Component, pageProps }: AppPropsWithLayout) {
           content="width=device-width, initial-scale=1 maximum-scale=1"
         />
         <title>Bitfolio</title>
+        <link rel="icon" href="/bitfolio-website-favicon-color.png" />
+        {/* <Script src="https://just.money/assets/js/widgetLib-1.1.js"></Script> */}
+        {/* <Helmet>
+          <script src="https://just.money/assets/js/widgetLib-1.1.js"></Script>
+          <script>
+            {`
+              JmApi.swapWidget('jmSwapFrame', {
+                network: 'BTTC',
+                slippage: 0.05,
+                liquidityTab: true,
+                shadow: false,
+                backgroundColor: '#F3F3F3',
+                backgroundImage: 'url(/assets/img/swap-form-bg-lighter.svg);',
+                textColor: '#000',
+                buttonStyle: 'background:#000;color:#FFF;',
+                maxButtonStyle: 'background:#FFF;color:#000;',
+                headingStyle: 'color:#353840;text-shadow:none',
+                lightBranding: false,
+                tokens: ['TRX', 'BTT'],
+                fromToken: 'TRX',
+                toToken: 'BTT',
+              });
+            `}
+          </script>
+        </Helmet> */}
       </Head>
       <ThemeProvider
         attribute="class"

@@ -32,7 +32,7 @@ export const priceFeedData = [
     id: '1',
     name: 'Tron',
     symbol: 'TRX',
-    balance: '0.669653',
+    balance: '0.06603',
     usdBalance: '0.2345',
     logo: TetherImage,
     change: '-1.5%',
