@@ -40,9 +40,9 @@ const LiquidityPage: NextPageWithLayout = () => {
           </div>
         </div>
         <div className="flex flex-col gap-4 xs:gap-[18px]">
-          <TransactionInfo label={'13.77 eth per btc'} value={'0%'} />
+          <TransactionInfo label={'13.77 BTT per btc'} value={'0%'} />
           <TransactionInfo
-            label={'0.072631 Btc per ETH'}
+            label={'0.072631 BTT per TRX'}
             value={'Share of Pool'}
           />
         </div>
