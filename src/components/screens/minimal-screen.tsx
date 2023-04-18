@@ -12,6 +12,8 @@ import { priceFeedData } from '@/data/static/price-feed';
 import { useBreakpoint } from '@/lib/hooks/use-breakpoint';
 //images
 import AuthorImage from '@/assets/images/author.jpg';
+import { useContext } from 'react';
+import { WalletContext } from '@/lib/hooks/use-connect';
 
 const topPoolsLimit = (breakpoint: string) => {
   switch (breakpoint) {
@@ -30,6 +32,7 @@ export default function MinimalScreen() {
   useEffect(() => {
     setLimit(topPoolsLimit(breakpoint));
   }, [breakpoint]);
+  const { address, disconnectWallet, balance } = useContext(WalletContext);
   return (
     <>
       <NextSeo title="Bitfolio" description="Bitfolio dApp" />
@@ -52,9 +55,15 @@ export default function MinimalScreen() {
                 <h3 className="mb-2 text-center text-sm uppercase tracking-wider text-gray-500 dark:text-gray-400 3xl:mb-3">
                   My Balance
                 </h3>
-                <div className="mb-7 text-center font-medium tracking-tighter text-gray-900 dark:text-white xl:text-2xl 3xl:mb-8 3xl:text-[32px]">
-                  $10,86,000
-                </div>
+                {address ? (
+                  <div className="mb-7 text-center font-medium tracking-tighter text-gray-900 dark:text-white xl:text-2xl 3xl:mb-8 3xl:text-[32px]">
+                    {balance} ETH
+                  </div>
+                ) : (
+                  <div className="mb-7 text-center font-medium tracking-tighter text-gray-900 dark:text-white xl:text-2xl 3xl:mb-8 3xl:text-[32px]">
+                    *********
+                  </div>
+                )}
               </div>
               <span className="-mx-6 block border-t border-dashed border-t-gray-200 dark:border-t-gray-700 3xl:-mx-8" />
               <TransactCoin className="mt-6" />

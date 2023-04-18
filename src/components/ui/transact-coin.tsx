@@ -9,6 +9,8 @@ import { IconUSFlag } from '@/components/icons/icon-us-flag';
 import { useIsMounted } from '@/lib/hooks/use-is-mounted';
 import { useBreakpoint } from '@/lib/hooks/use-breakpoint';
 import CoinListBox from '@/components/ui/coin-listbox';
+import { useContext } from 'react';
+import { WalletContext } from '@/lib/hooks/use-connect';
 
 const tabMenu = [
   {
@@ -106,6 +108,8 @@ function CoinTransaction({ transactionType }: CoinTransactionProps) {
     setExchangeRate(calcExRate);
   }, [amount, calcExRate]);
 
+  const { address, disconnectWallet, balance } = useContext(WalletContext);
+
   return (
     <>
       <div className="group relative flex rounded-lg border border-gray-200 transition-colors duration-200 hover:border-gray-900 dark:border-gray-700 dark:hover:border-gray-600">
@@ -160,15 +164,25 @@ function CoinTransaction({ transactionType }: CoinTransactionProps) {
           />
         </div>
       )}
-
-      <Button
-        size="large"
-        shape="rounded"
-        fullWidth={true}
-        className="mt-6 bg-[#34234] uppercase xs:mt-8 xs:tracking-widest xl:px-2 2xl:px-9"
-      >
-        Process to wallet
-      </Button>
+      {address ? (
+        <Button
+          size="large"
+          shape="rounded"
+          fullWidth={true}
+          className="mt-6 bg-[#34234] uppercase xs:mt-8 xs:tracking-widest xl:px-2 2xl:px-9"
+        >
+          CONNECTED
+        </Button>
+      ) : (
+        <Button
+          size="large"
+          shape="rounded"
+          fullWidth={true}
+          className="mt-6 bg-[#34234] uppercase xs:mt-8 xs:tracking-widest xl:px-2 2xl:px-9"
+        >
+          CONNECT WALLET
+        </Button>
+      )}
     </>
   );
 }

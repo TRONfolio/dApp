@@ -25,7 +25,7 @@ export default function TopPools({ limit }: TopPoolsProps) {
       </h3>
       <div className="mb-5 flex items-center justify-between text-sm text-gray-500 dark:text-gray-400">
         <span className="col-span-2">Pool</span>
-        <span>Volume</span>
+        <span>APY</span>
       </div>
 
       {TopPoolsData.slice(0, limit ?? -1).map((pool, index) => {
