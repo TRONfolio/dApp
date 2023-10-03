@@ -9,7 +9,12 @@ import ModalsContainer from '@/components/modal-views/container';
 import DrawersContainer from '@/components/drawer-views/container';
 import SettingsButton from '@/components/settings/settings-button';
 import SettingsDrawer from '@/components/settings/settings-drawer';
-import { WalletProvider } from '@/lib/hooks/use-connect';
+//import { WalletProvider } from '@/lib/hooks/use-connect';
+import {
+  WalletProvider,
+  useWallet,
+} from '@tronweb3/tronwallet-adapter-react-hooks';
+
 import 'overlayscrollbars/css/OverlayScrollbars.css';
 // base css file
 import 'swiper/css';
@@ -40,7 +45,7 @@ function CustomApp({ Component, pageProps }: AppPropsWithLayout) {
           name="viewport"
           content="width=device-width, initial-scale=1 maximum-scale=1"
         />
-        <title>Bitfolio</title>
+        <title>Tronfolio</title>
         <link rel="icon" href="/bitfolio-website-favicon-color.png" />
         {/* <Script src="https://just.money/assets/js/widgetLib-1.1.js"></Script> */}
         {/* <Helmet>

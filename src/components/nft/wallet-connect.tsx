@@ -8,6 +8,7 @@ import { ChevronForward } from '@/components/icons/chevron-forward';
 import { PowerIcon } from '@/components/icons/power';
 import { useModal } from '@/components/modal-views/context';
 import { useContext } from 'react';
+import { useWallet } from '@tronweb3/tronwallet-adapter-react-hooks';
 
 export default function WalletConnect({
   btnClassName,
@@ -17,7 +18,18 @@ export default function WalletConnect({
   anchorClassName?: string;
 }) {
   const { openModal } = useModal();
-  const { address, disconnectWallet, balance } = useContext(WalletContext);
+  // const { address, disconnectWallet, balance} = useContext(WalletContext);
+  const {
+    wallet,
+    address,
+    connected,
+    select,
+    connect,
+    disconnect,
+    signMessage,
+    signTransaction,
+  } = useWallet();
+
   return (
     <>
       {address ? (
@@ -62,7 +74,7 @@ export default function WalletConnect({
                           </span>
                         </div>
                         <div className="mt-3 font-medium uppercase tracking-wider text-gray-900 dark:text-white">
-                          {balance} ETH
+                          {balance} TRX
                         </div>
                       </div>
                     </Menu.Item>
@@ -93,6 +105,7 @@ export default function WalletConnect({
         </div>
       ) : (
         <Button
+          disabled={connected}
           onClick={() => openModal('WALLET_CONNECT_VIEW')}
           className={cn('shadow-main hover:shadow-large', btnClassName)}
         >
