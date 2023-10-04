@@ -19,6 +19,7 @@ import { RadioGroup } from '@/components/ui/radio-group';
 import { motion } from 'framer-motion';
 import { useTheme } from 'next-themes';
 import { useBreakpoint } from '@/lib/hooks/use-breakpoint';
+import { useEffect } from 'react';
 import Image from 'next/image';
 
 import {
@@ -69,7 +70,7 @@ function RadioGroupOption({ value }: RadioOptionProps) {
 export default function ComparisonChart() {
   const { theme } = useTheme();
   const breakpoint = useBreakpoint();
-  const [price, setPrice] = useState(6.2);
+  const [price, setPrice] = useState('');
   const [date, setDate] = useState(1624147200);
   const [status, setStatus] = useState('Month');
   const [chartData, setChartData] = useState(monthlyComparison);
@@ -77,6 +78,18 @@ export default function ComparisonChart() {
   const [percentage, setPercentage] = useState('2.22%');
   const [toggleCoin, setToggleCoin] = useState(false);
   const formattedDate = format(new Date(date * 1000), 'MMMM d, yyyy hh:mma');
+  useEffect(() => {
+    const ws = new WebSocket('wss://stream.binance.com:9443/ws/bttcusdt@trade');
+    ws.onmessage = (event) => {
+      const stockobject = JSON.parse(event.data);
+      setPrice(stockobject.p);
+    };
+    return () => {
+      if (ws) {
+        ws.close();
+      }
+    };
+  }, []);
 
   const handleOnChange = (value: string) => {
     setStatus(value);
@@ -202,7 +215,8 @@ export default function ComparisonChart() {
                   data.activePayload && data.activePayload[0].payload.date
                 );
                 setPrice(
-                  data.activePayload && data.activePayload[0].payload.btc
+                  price
+                  // data.activePayload && data.activePayload[0].payload.btc
                 );
                 setPriceDiff(
                   data.activePayload && data.activePayload[0].payload.diff

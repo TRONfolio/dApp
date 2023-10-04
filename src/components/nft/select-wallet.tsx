@@ -5,15 +5,40 @@ import { WalletContext } from '@/lib/hooks/use-connect';
 import { useModal } from '@/components/modal-views/context';
 import { useContext, useEffect, useState } from 'react';
 import { useWallet } from '@tronweb3/tronwallet-adapter-react-hooks';
+import {
+  Alert,
+  Snackbar,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  TextField,
+} from '@mui/material';
+//import { useWallet } from '@tronweb3/tronwallet-adapter-react-hooks';
+import {
+  WalletActionButton,
+  WalletConnectButton,
+  WalletDisconnectButton,
+  WalletModalProvider,
+  WalletSelectButton,
+} from '@tronweb3/tronwallet-adapter-react-ui';
+
+const rows = [
+  { name: 'Connect Button', reactUI: WalletConnectButton },
+  { name: 'Disconnect Button', reactUI: WalletDisconnectButton },
+  { name: 'Select Wallet Button', reactUI: WalletSelectButton },
+  { name: 'Multi Action Button', reactUI: WalletActionButton },
+];
 
 export default function SelectWallet({ ...props }) {
-  const { address, connectToWallet, error, checkConnection } =
-    useContext(WalletContext);
+  const { connectToWallet, error, checkConnection } = useContext(WalletContext);
   const { closeModal } = useModal();
   const [isConnected, setIsConnected] = useState(false);
   const {
     wallet,
-    // address,
+    address,
     connected,
     select,
     connect,
@@ -29,8 +54,8 @@ export default function SelectWallet({ ...props }) {
       const isConnected = window.tronLink.ready;
       setIsConnected(isConnected);
     }
-    checkConnection();
-    checkTronConnection();
+    // checkConnection();
+    //  checkTronConnection();
   }, []);
 
   //checkTronConnection()
@@ -40,46 +65,75 @@ export default function SelectWallet({ ...props }) {
   }, [address, closeModal]);
 
   return (
-    <div
-      className="relative z-50 mx-auto w-[440px] max-w-full rounded-lg bg-white px-9 py-16 dark:bg-light-dark"
-      {...props}
-    >
-      <button type="button" onClick={() => select('TronLink Adapter' as any)}>
-        {' '}
-        Select TronLink
-      </button>
+    //     <div
+    //       className="relative z-50 mx-auto w-[440px] max-w-full rounded-lg bg-white px-9 py-16 dark:bg-light-dark"
+    //       {...props}
+    //     >
+    //       <button type="button" onClick={() => select('TronLink Adapter' as any)}>
+    //         {' '}
+    //         Select TronLink
+    //       </button>
 
-      <h2 className="mb-4 text-center text-2xl font-medium uppercase text-gray-900 dark:text-white">
-        Connect Wallet
-      </h2>
-      <p className="text-center text-sm leading-loose tracking-tight text-gray-600 dark:text-gray-400">
-        By connecting your wallet, you agree to our Terms of Service and our
-        Privacy Policy.
-      </p>
+    //       <h2 className="mb-4 text-center text-2xl font-medium uppercase text-gray-900 dark:text-white">
+    //         Connect Wallet
+    //       </h2>
+    //       <p className="text-center text-sm leading-loose tracking-tight text-gray-600 dark:text-gray-400">
+    //         By connecting your wallet, you agree to our Terms of Service and our
+    //         Privacy Policy.
+    //       </p>
 
-      <div
-        className="mt-12 flex h-14 w-full cursor-pointer items-center justify-between rounded-lg bg-gradient-to-l from-[#ffdc24] to-[#ff5c00] px-4 text-base text-white transition-all hover:-translate-y-0.5"
-        onClick={() => console.log(useWallet)}
-      >
-        {!isConnected ? <span>Tronlink</span> : 'Connected'}
-        <span className="h-auto w-9">
-          {/* <Image
-            src="/Users/user/Desktop/tron.png
-"
-            alt="tronlink"
-            width={36}
-            height={72}
-          /> */}
-        </span>
-        <div> I am truly : {isConnected ? 'conected' : 'not Connected'}</div>
-      </div>
+    //       <div
+    //         className="mt-12 flex h-14 w-full cursor-pointer items-center justify-between rounded-lg bg-gradient-to-l from-[#ffdc24] to-[#ff5c00] px-4 text-base text-white transition-all hover:-translate-y-0.5"
+    //         onClick={() => console.log(useWallet)}
+    //       >
+    //         {!isConnected ? <span>Tronlink</span> : 'Connected'}
+    //         <span className="h-auto w-9">
+    //           {/* <Image
+    //             src="/Users/user/Desktop/tron.png
+    // "
+    //             alt="tronlink"
+    //             width={36}
+    //             height={72}
+    //           /> */}
+    //         </span>
+    //         <div> I am truly : {isConnected ? 'conected' : 'not Connected'}</div>
+    //       </div>
 
-      {error && (
-        <p className="mt-3 text-center text-xs text-red-500">
-          Please install Tronlink plugin in your browser in order to connect
-          wallet.
-        </p>
-      )}
+    //       {error && (
+    //         <p className="mt-3 text-center text-xs text-red-500">
+    //           Please install Tronlink plugin in your browser in order to connect
+    //           wallet.
+    //         </p>
+    //       )}
+    //     </div>
+    //   );
+    <div>
+      <h2>UI Component</h2>
+      <TableContainer style={{ overflow: 'visible' }} component="div">
+        <Table sx={{}} aria-label="simple table">
+          <TableHead>
+            <TableRow>
+              <TableCell>Component</TableCell>
+              <TableCell align="left">React UI</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {rows.map((row) => (
+              <TableRow
+                key={row.name}
+                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+              >
+                <TableCell component="th" scope="row">
+                  {row.name}
+                </TableCell>
+                <TableCell align="left">
+                  <row.reactUI></row.reactUI>
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
     </div>
   );
 }

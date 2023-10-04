@@ -51,7 +51,7 @@ const VotePage: NextPageWithLayout = () => {
               Vote with Pool
             </h3>
             <p className="leading-loose text-gray-600 dark:text-gray-400">
-              Vote with Bitfolio tokens held{' '}
+              Vote with Tronfolio tokens held{' '}
               <br className="hidden xs:inline-block" /> in your wallet or
               delegated <br className="hidden xs:inline-block" /> to you.
             </p>

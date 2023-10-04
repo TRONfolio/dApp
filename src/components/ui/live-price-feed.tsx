@@ -6,6 +6,7 @@ import { useBreakpoint } from '@/lib/hooks/use-breakpoint';
 import { useIsMounted } from '@/lib/hooks/use-is-mounted';
 import cn from 'classnames';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 type Price = {
   name: number;
@@ -38,6 +39,21 @@ export function LivePriceFeed({
   prices,
   isBorder,
 }: LivePriceFeedProps) {
+  const [balances, setBalance] = useState();
+
+  useEffect(() => {
+    const ws = new WebSocket('wss://stream.binance.com:9443/ws/trxusdt@trade');
+    ws.onmessage = (event) => {
+      const stockobject = JSON.parse(event.data);
+      setBalance(stockobject.p);
+    };
+    return () => {
+      if (ws) {
+        ws.close();
+      }
+    };
+  }, []);
+
   return (
     <div
       className={cn(
@@ -57,19 +73,19 @@ export function LivePriceFeed({
         </div>
 
         <div className="mb-2 text-sm font-medium tracking-tighter text-gray-900 dark:text-white lg:text-lg 2xl:text-xl 3xl:text-2xl">
-          {balance}
+          {balances}
           <span className="ml-3">USD</span>
         </div>
 
         <div className="flex items-center text-xs font-medium 2xl:text-sm">
           <span
             className={`flex items-center  ${
-              isChangePositive ? 'text-green-500' : 'text-red-500'
+              !isChangePositive ? 'text-green-500' : 'text-red-500'
             }`}
           >
             <span
               className={`ltr:mr-2 rtl:ml-2 ${
-                !isChangePositive ? 'rotate-180' : ''
+                isChangePositive ? 'rotate-180' : ''
               }`}
             >
               <ArrowUp />
@@ -81,7 +97,7 @@ export function LivePriceFeed({
 
       <div
         className="h-20 w-full"
-        data-hello={isChangePositive ? '#22c55e' : '#D6455D'}
+        data-hello={!isChangePositive ? '#22c55e' : '#D6455D'}
       >
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart data={prices}>

@@ -188,7 +188,8 @@ export default function ComparisonChart() {
                   data.activePayload && data.activePayload[0].payload.date
                 );
                 setPrice(
-                  data.activePayload && data.activePayload[0].payload.btc
+                  8
+                  //data.activePayload && data.activePayload[0].payload.btc
                 );
                 setPriceDiff(
                   data.activePayload && data.activePayload[0].payload.diff

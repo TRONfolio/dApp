@@ -7,7 +7,7 @@ import ActiveLink from '@/components/ui/links/active-link';
 import { ChevronForward } from '@/components/icons/chevron-forward';
 import { PowerIcon } from '@/components/icons/power';
 import { useModal } from '@/components/modal-views/context';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useWallet } from '@tronweb3/tronwallet-adapter-react-hooks';
 
 export default function WalletConnect({
@@ -18,7 +18,8 @@ export default function WalletConnect({
   anchorClassName?: string;
 }) {
   const { openModal } = useModal();
-  // const { address, disconnectWallet, balance} = useContext(WalletContext);
+  const [balance, setBalance] = useState('');
+  //const {  disconnectWallet, balance} = useContext(WalletContext);
   const {
     wallet,
     address,
@@ -29,10 +30,18 @@ export default function WalletConnect({
     signMessage,
     signTransaction,
   } = useWallet();
+  const getBalance = async () => {
+    const walletBalance: string = await window.tronWeb.trx.getBalance(address);
+    const balanceInEth = window.tronWeb.fromSun(walletBalance);
+    setBalance(balanceInEth);
+  };
+  useEffect(() => {
+    getBalance();
+  }, []);
 
   return (
     <>
-      {address ? (
+      {connected ? (
         <div className="flex items-center gap-3 sm:gap-6 lg:gap-8">
           <div className="relative flex-shrink-0">
             <Menu>
@@ -68,13 +77,13 @@ export default function WalletConnect({
                             Balance
                           </span>
                           <span className="rounded-lg bg-gray-100 px-2 py-1 text-sm tracking-tighter dark:bg-gray-800">
-                            {address.slice(0, 6)}
+                            {address!.slice(0, 6)}
                             {'...'}
-                            {address.slice(address.length - 6)}
+                            {address!.slice(address!.length - 6)}
                           </span>
                         </div>
                         <div className="mt-3 font-medium uppercase tracking-wider text-gray-900 dark:text-white">
-                          {balance} TRX
+                          {balance}TRX
                         </div>
                       </div>
                     </Menu.Item>
@@ -83,7 +92,7 @@ export default function WalletConnect({
                     <div className="p-3">
                       <div
                         className="flex cursor-pointer items-center gap-3 rounded-lg py-2.5 px-3 text-sm font-medium text-gray-900 transition hover:bg-gray-50 dark:text-white dark:hover:bg-gray-800"
-                        onClick={disconnectWallet}
+                        // onClick={disconnectWallet}
                       >
                         <PowerIcon />
                         <span className="grow uppercase">Disconnect</span>
